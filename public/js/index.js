@@ -23,17 +23,13 @@ function sendMsg(){
   if(name && content){
     socket.emit('newPerson', name);
     socket.emit('sendMsg', {name, content});
+    //防止昵称改变
+    getName().setAttribute("disabled", "disabled");
+    getName().style.opacity = 0.5;
   }
 
   //清空textarea标签的内容
   getContent().value = '';
-}
-
-document.onKeyDowm = function(event){
-  var e = event || window.event || arguments.callee.caller.arguments[0];
-  if(e && e.keyCode){
-    sendMsg();
-  }
 }
 
 socket.on('updatePerson', (people) => {
@@ -59,13 +55,14 @@ socket.on('sendNewMsg', (newMessages) => {
     let p = document.createElement('p');
     let headText = document.createTextNode(newMessage.name + '  ' + newMessage.time);
     let pText = document.createTextNode(newMessage.content);
-    li.setAttribute('class', 'user');
+    li.setAttribute('class', 'user animated fadeIn');
     p.setAttribute('class', 'userContent');
     head.appendChild(headText);
     p.appendChild(pText);
     li.appendChild(head);
     li.appendChild(p);
     message.appendChild(li);
+    message.scrollTop = message.scrollHeight;
 });
 
 socket.on('sendNewSystemMsg', (systemMsg) => {
