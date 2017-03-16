@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>webChat</title>
+  <link rel="stylesheet" href="static/css/index.css">
+</head>
+<body>
+    <div id="bg"></div>
+    <main>
+      <header>
+        <article>
+          <span>当前在线人数：</span><span id="person-num">0</span>
+          <div id="person-list"></div>
+        </article>
+      </header>
+      <section>
+          <ul id="message">
+
+          </ul>
+      </section>
+      <section id="input">
+        <input type="text" id="name" value="" placeholder="你的名字"/>
+        <textarea name="name" rows="8" cols="40" id="content"></textarea>
+        <input type="button" id="send" value="发送"/>
+      </section>
+      <footer></footer>
+    </main>
+</body>
+<script src="/socket.io/socket.io.js"></script>
+<script src="static/js/index.js"></script>
+<!-- <script src="./public/js/index.js"></script> -->
+</html>

@@ -1,0 +1,20 @@
+{
+  "name": "webchat",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "animate.css": "^3.5.2",
+    "async-lock": "^0.3.9",
+    "bootstrap": "^3.3.7",
+    "express": "^4.15.2",
+    "less": "^2.7.2",
+    "normalize.css": "^5.0.0",
+    "socket.io": "^1.7.3"
+  }
+}
