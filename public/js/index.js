@@ -1,6 +1,6 @@
 "use strict";
 
-const socketURL='http://123.106.102.140';
+const socketURL='http://127.0.0.1:8080';
 var socket = io(socketURL);//链接域名
 var nicknames = [];//存储输入的昵称
 var personNum = document.getElementById('person-num');

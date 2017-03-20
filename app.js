@@ -99,7 +99,7 @@ function backupMsg(message){
     if(index !== 0){
       str += ',\n';
     }
-    str += '  {\n   "name":"' + value.name + '",\n  "time":"' + value.time + '",\n  "content":"' + value.content + '"\n   }';
+    str += '  {\n   "name":"' + value.name.replace(/\n/g,'') + '",\n  "time":"' + value.time + '",\n  "content":"' + value.content + '"\n   }';
   });
   str += '\n]';
 
