@@ -1,5 +1,5 @@
 {
-  "port": 8080,
+  "port": 80,
   "backup": true,
   "historyAmount": 25,
   "backupFile": "./backup/data.json"
