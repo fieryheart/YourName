@@ -12,9 +12,8 @@ ul, li{
 }
 
 #bg{
-  position: absolute;
   width: 100%;
-  height: 100%;
+  height: inherit;
   background-image: url('../images/bg.jpg');
   background-repeat: no-repeat;
   background-size: cover;
@@ -151,6 +150,7 @@ article span{
       height: 100%;
     }
     #bg{
+
       background-size: auto;
     }
     main{

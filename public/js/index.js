@@ -33,6 +33,8 @@ function sendMsg(){
   getContent().value = '';
 }
 
+
+
 //页面初次加载时获取历史消息
 function fetchHistory(){
   let req = new XMLHttpRequest();
@@ -43,11 +45,11 @@ function fetchHistory(){
         let head = document.createElement('h3');
         let p = document.createElement('p');
         let headText = document.createTextNode(historyMessage.name + '     ' + historyMessage.time);
-        let pText = document.createTextNode(historyMessage.content);
+        let pText = historyMessage.content.replace(/\\n/g,"\n").replace(/\\r/g,"\r").replace(/&quot;/g,"\"");
         li.setAttribute('class', 'user');
         p.setAttribute('class', 'userContent');
         head.appendChild(headText);
-        p.appendChild(pText);
+        p.innerText = pText;
         li.appendChild(head);
         li.appendChild(p);
         message.appendChild(li);
@@ -93,11 +95,11 @@ socket.on('sendNewMsg', (newMessages) => {
     let head = document.createElement('h3');
     let p = document.createElement('p');
     let headText = document.createTextNode(newMessage.name + '      ' + newMessage.time);
-    let pText = document.createTextNode(newMessage.content);
+    let pText = newMessage.content.replace(/\\n/g,"\n").replace(/\\r/g,"\r").replace(/&quot;/g,"\"");
     li.setAttribute('class', 'user animated fadeIn');
     p.setAttribute('class', 'userContent');
     head.appendChild(headText);
-    p.appendChild(pText);
+    p.innerText = pText;
     li.appendChild(head);
     li.appendChild(p);
     message.appendChild(li);
