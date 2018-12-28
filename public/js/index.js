@@ -1,7 +1,7 @@
 "use strict";
 
-// const socketURL='http://127.0.0.1:8080';
-const socketURL='http://www.miyamizushrine.cn';
+const socketURL='http://127.0.0.1:9000';
+// const socketURL='http://www.miyamizushrine.cn';
 var socket = io(socketURL);//链接域名
 var nicknames = [];//存储输入的昵称
 var personNum = document.getElementById('person-num');
